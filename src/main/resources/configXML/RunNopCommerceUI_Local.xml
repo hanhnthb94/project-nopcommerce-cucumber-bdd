@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="NopCommerce UI - Automation Testing">
+    <parameter name="serverName" value="dev" />
+    <parameter name="envName" value="local" />
+    <listeners>
+        <listener class-name="commons.MethodListener" />
+        <listener class-name="reportConfigs.ExtentTestListener" />
+    </listeners>
+    <test name="Run on Firefox" preserve-order="true">
+        <parameter name="browserName" value="firefox" />
+        <parameter name="ipAddress" value="" />
+        <parameter name="portNumber" value="" />
+        <parameter name="osName" value="" />
+        <parameter name="osVersion" value="" />
+        <classes>
+            <class name="cucumberOptions.NopcommerceTestRunner" />
+        </classes>
+    </test>
+    <!--<test name="Run on Chrome" preserve-order="true">
+        <parameter name="browser" value="chrome" />
+        <parameter name="ipAddress" value="" />
+        <parameter name="portNumber" value="" />
+        <parameter name="osName" value="" />
+        <parameter name="osVersion" value="" />
+        <classes>
+            <class name="com.nopcommerce.users.Lever_33_Data_In_TestClass_Cloud_Testing" />
+        </classes>
+    </test>-->
+</suite>

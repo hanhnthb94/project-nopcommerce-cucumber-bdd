@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="NopCommerce UI - Automation Testing" thread-count="2">
+    <parameter name="server" value="dev" />
+    <parameter name="envName" value="crossBrowser" />
+    <listeners>
+        <listener class-name="commons.MethodListener" />
+        <listener class-name="reportConfigs.ExtentTestListener" />
+    </listeners>
+    <test name="Run on Firefox" preserve-order="true">
+        <parameter name="browser" value="firefox" />
+        <parameter name="osName" value="Windows 10" />
+        <classes>
+            <class name="cucumberOptions.NopcommerceTestRunner" />
+        </classes>
+    </test>
+    <test name="Run on Chrome" preserve-order="true">
+        <parameter name="browser" value="chrome" />
+        <parameter name="osName" value="Windows 10" />
+        <classes>
+            <class name="cucumberOptions.NopcommerceTestRunner" />
+        </classes>
+    </test>
+</suite>

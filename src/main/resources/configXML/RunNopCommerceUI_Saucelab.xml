@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="NopCommerce UI - Automation Testing">
+    <parameter name="envName" value="saucelab" />
+    <parameter name="serverName" value="dev" />
+    <listeners>
+        <listener class-name="commons.MethodListener" />
+        <listener class-name="reportConfigs.ExtentTestListener" />
+    </listeners>
+    <test name="Run on Firefox" preserve-order="true">
+        <parameter name="browserName" value="firefox" />
+        <parameter name="osName" value="Windows 11" />
+        <classes>
+            <class name="cucumberOptions.NopcommerceTestRunner" />
+        </classes>
+    </test>
+    <!--The saucelab trial version only runs on one platform (browser, os)-->
+    <!--<test name="Run on Chrome" preserve-order="true">
+        <parameter name="browserName" value="chrome" />
+        <parameter name="osName" value="Windows 11" />
+        <classes>
+            <class name="cucumberOptions.NopcommerceTestRunner" />
+        </classes>
+    </test>-->
+</suite>
